@@ -1,27 +1,3 @@
- #Task 1
-def yoxlama(metn,simvol):
-    for i in metn:
-        if i==simvol:
-            return True
-        else:
-            return False
-metn=input("Metn daxil edin:")
-simvol=input("Simvol daxil edin:")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #Task 7
 '''
