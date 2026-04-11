@@ -19,6 +19,36 @@ ilk_bes(List)
 print()
 son_bes(List)'''
 
+#Task 8
+'''
+List1 = [1, 2, 3]
+List2 = [2, 4, 6]
+a=False
+for i in List1:
+    for k in List2:
+        if i==k:
+            a=True
+    if a:
+        print("Var")
+        break
+else:
+    print("Yoxdur")'''
+
+#Task 10
+'''
+List1 = [3, 4, 6, 7, 23]
+List2=[]
+def uzun(List1):
+    s=0
+    for i in List1:
+        s+=1
+    return s
+
+a=List1[0]
+b=List1[1:uzun(List1)]
+List2=b+[a]
+print(List2)'''
+
 #Task 11
 '''
 List1 = ['A', 'B', 'C']
@@ -39,6 +69,17 @@ def cutlesdirme(List1,List2):
     return List3
 print(cutlesdirme(List1,List2))'''
 
+#Task 12
+'''
+List = [5, 7, 5, 9, 2, 6, 4, 3, 2, 5, 6]
+cem=0
+for i in List:
+    if i%2==1:
+        cem+=i
+    else:
+        break
+print(f"Ilk cut reqeme qeder olan cem:{cem}")'''
+
 #Task 13
 '''
 from random import *
@@ -56,6 +97,41 @@ for i in List1:
         List2+=[i]
 
 print(List1)
+print(List2)'''
+
+#Task 14
+'''
+from random import *
+N=int(input("Listin Olcusu:"))
+
+def funct(eded):
+    ferq=abs(eded%10-(eded//10)%10)
+    cem=eded%10+(eded//10)%10
+    if ferq%2==1 and cem%2==1:
+        return True
+    
+List1=[]
+for i in range(N):
+    List1+=[randint(100,999)]
+
+List2=[]
+
+for i in List1:
+    if funct(i):
+        List2+=[i]
+print(List2)'''
+
+#Task 17
+'''
+List1 = [1, 2, 'aasf', '1', '123', 123,-5]
+List2=[]
+for i in List1:
+    try:
+        if i>0:
+            List2+=[i]
+
+    except:
+        continue
 print(List2)'''
 
 #Task 18
@@ -101,7 +177,7 @@ print(List3)'''
 #Task 23
 '''
 def smaximum(List):
-    maxs=0
+    maxs=float(-inf)
     for i in List:
         if maxs<i:
             maxs=i
@@ -142,6 +218,7 @@ def sminimum(List):
 List=[3,542,5,122,35,52,9,523,444]
 print(smaximum(List))
 print(sminimum(List))'''
+
 
 #Task 26
 '''
@@ -202,3 +279,73 @@ Massiv=[10,20,30,40,50,60]
 new=[]
 print(inversiya(Massiv,new))
 '''
+
+#Task 28
+'''
+from random import choice
+
+def indeks(soz):
+    letters='qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM'
+    a=soz[0]
+    for i in range(26):
+        if letters[i]==a:
+            k=i
+            break
+    return k
+
+def cumle(a,b,c,d):
+    letters='qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM'
+    soz=choice(a)
+    firstletter=letters[indeks(soz)+26]
+    soz=soz[1:]
+    
+    Cumle=firstletter+soz+" "+choice(b)+" "+choice(c)+" "+choice(d)+" "+choice(a)+" "+choice(b)+"."
+    return Cumle
+
+article_list = ["the", "a", "one", "some", "any"]
+noun_list = ["boy", "girl", "dog", "town" , "car"]
+verb_list = ["drove", "jumped", "ran", "walked" , "skipped"]
+preposition_list = ["to", "from", "over", "under" , "on"]
+
+say=int(input("Cumle sayi:"))
+for i in range(say):
+    print(cumle(article_list,noun_list,verb_list,preposition_list,),end=" ")'''
+
+#Task 29
+'''
+print("0-100 arasinda qiymetlerinizi daxil edin:")
+
+eded1=int(input("Fizika fenninin qiymeti: "))
+eded2=int(input("Riyaziyyatin qiymeti: "))
+eded3=int(input("Kimya fenninin qiymeti: "))
+eded4=int(input("Ingilis dilinin qiymeti: "))
+eded5=int(input("Ana dilinin qiymeti: "))
+
+List=[eded1]+[eded2]+[eded3]+[eded4]+[eded5]
+print(f"Cavablariniz:{List}")
+
+print("Sizin qiymetleriniz:")
+a,b,c,d,e=0,0,0,0,0
+for i in List:
+    if i>90:
+        a+=1
+    elif i>80 and i<91:
+        b+=1
+    elif i>70 and i<81:
+        c+=1
+    elif i>60 and i<71:
+        d+=1
+    else:
+        e+=1
+if a!=0:
+    print(f"{a} eded A,")
+if b!=0:
+    print(f"{b} eded B,")
+if c!=0:
+    print(f"{c} eded C,")
+if d!=0:
+    print(f"{d} eded D,")
+if e==0:
+    print("Kesriniz yoxdur.")
+else:
+    print(f"{e} eded kesriniz var.")'''
